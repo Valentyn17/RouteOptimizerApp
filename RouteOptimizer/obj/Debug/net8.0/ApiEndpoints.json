@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "RouteOptimizer.Controllers.Controller",
+    "Method": "OptimizeFromFile",
+    "RelativePath": "api/v1/optimize/from-file",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dataFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RouteOptimizer.Controllers.Controller",
+    "Method": "OptimizeSpecificRoute",
+    "RelativePath": "api/v1/optimize/specific-route",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RouteOptimizer.Models.RequestAlgorithmModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RouteOptimizer.Controllers.Controller",
+    "Method": "OptimizeWithAlgorithm",
+    "RelativePath": "api/v1/optimize/with-algorithm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "RouteOptimizer.Models.RequestAlgorithmModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

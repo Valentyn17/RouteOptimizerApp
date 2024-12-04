@@ -1,0 +1,37 @@
+.app {
+    margin: 20px;
+    font-family: 'Open Sans';
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-rows: auto auto;
+    background-color: rgb(241, 242, 243);
+    min-height: 100vh;
+}
+
+    .app .form {
+        margin: 20px;
+        height: fit-content;
+        padding: 20px;
+    }
+
+    .app .result {
+        margin: 20px;
+        background-color: rgb(232, 233, 235);
+        padding: 30px;
+        border-radius: 30px;
+    }
+
+    .app .result-output{
+        grid-column: 1 / -1;
+    }
+
+    .app .controls-section
+    {
+        max-height: fit-content;
+    }
+
+    .app .result-list
+    {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }

@@ -1,0 +1,36 @@
+.clients {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.client-inputs
+{
+    display: contents;
+}
+
+.client {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+    .client div {
+        width: 100%;
+    }
+
+    .client button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: rgb(241, 242, 244);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+    }
+
+    .client button:hover {
+        background-color: rgb(232, 233, 235);
+    }
