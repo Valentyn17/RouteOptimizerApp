@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\RouteOptimizer.csproj": {}
+    "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\RouteOptimizer.csproj": {
+    "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\RouteOptimizer.csproj",
+        "projectUniqueName": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer.csproj",
         "projectName": "RouteOptimizer",
-        "projectPath": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\RouteOptimizer.csproj",
+        "projectPath": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer.csproj",
         "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\obj\\",
+        "outputPath": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "/y05I/zQOc5z4X1Vyx9c0LYKGVdYv+mVoq6rW4RPElI=",
+  "Hash": "xRYIrMyLVQIqVKsvqbStCN34eoPNDuRQMrJlTJpPGAA=",
   "Source": "RouteOptimizer",
   "BasePath": "_content/RouteOptimizer",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

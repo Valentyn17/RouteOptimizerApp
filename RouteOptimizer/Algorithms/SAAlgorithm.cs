@@ -8,7 +8,7 @@ public class SAAlgorithm
     private readonly double _temperature;
     private readonly double _alpha;
 
-    public SAAlgorithm(int iterations = 50, double temperature = 1000, double alpha = 0.5)
+    public SAAlgorithm(int iterations = 200, double temperature = 100, double alpha = 0.97)
     {
         _iterations = iterations;
         _temperature = temperature;
@@ -17,38 +17,40 @@ public class SAAlgorithm
 
     public List<Vehicle> OptimizeRoutes(List<Client> clients, Depot depot, int numberOfVehicles, int vehicleCapacity, List<Vehicle> initialSolution)
     {
-        var currentSolution = DeepCopySolution(initialSolution);
-        var bestSolution = DeepCopySolution(initialSolution);
+        List<Vehicle> currentSolution = DeepCopySolution(initialSolution);
+        List<Vehicle> bestSolution = DeepCopySolution(initialSolution);
 
         double currentCost = CalculateTotalDistance(currentSolution, depot);
         double bestCost = currentCost;
-
         double temperature = _temperature;
+        int counter = 0;
+        const int MAXCOUNTER = 60;
+
 
         for (int iteration = 0; iteration < _iterations; iteration++)
         {
-            var neighborSolution = GenerateNeighbor(currentSolution, vehicleCapacity, numberOfVehicles, depot);
+            List<Vehicle> neighborSolution = GenerateNeighbor(currentSolution, vehicleCapacity, numberOfVehicles, depot);
 
-            var crossoverSolution = PerformCrossover(currentSolution, neighborSolution, vehicleCapacity);
+            //List<Vehicle> crossoverSolution = PerformCrossover(currentSolution, neighborSolution, vehicleCapacity);
 
-
-            if (!IsSolutionFeasible(crossoverSolution, clients.Count))
+            if (!IsSolutionFeasible(neighborSolution, clients.Count))
             {
                 continue;
             }
 
-            double newCost = CalculateTotalDistance(crossoverSolution, depot);
+            double newCost = CalculateTotalDistance(neighborSolution, depot);
             double delta = newCost - currentCost;
 
             if (delta < 0)
             {
-                currentSolution = crossoverSolution;
+                currentSolution = neighborSolution;
                 currentCost = newCost;
 
                 if (newCost < bestCost)
                 {
-                    bestSolution = DeepCopySolution(crossoverSolution);
+                    bestSolution = DeepCopySolution(neighborSolution);
                     bestCost = newCost;
+                    counter = 0;
                 }
             }
             else
@@ -56,13 +58,18 @@ public class SAAlgorithm
                 double probability = Math.Exp(-delta / temperature);
                 if (random.NextDouble() < probability)
                 {
-                    currentSolution = crossoverSolution;
+                    currentSolution = neighborSolution;
                     currentCost = newCost;
                 }
             }
 
-            temperature *= _alpha;
+            if (counter >= MAXCOUNTER) 
+            {
+                break;
+            }
 
+            temperature *= _alpha;
+            counter++;
         }
 
         return bestSolution;

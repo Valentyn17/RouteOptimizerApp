@@ -1,5 +1,7 @@
 ﻿using RouteOptimizer.Helpers;
 using RouteOptimizer.Models;
+using System;
+using System.Linq.Expressions;
 
 namespace RouteOptimizer.Algorithms
 {
@@ -10,6 +12,7 @@ namespace RouteOptimizer.Algorithms
         private int _populationSize;
         private int _generations;
         private double _mutationProbability;
+        private const int MAXCOUNTER = 100;
 
         public GeneticAlgorithm(int populationSize = 32, int generations = 1000, double mutationProbability = 0.3, bool showAlternativeRoutes = true)
         {
@@ -21,7 +24,6 @@ namespace RouteOptimizer.Algorithms
 
         public List<List<Vehicle>> OptimizeRoutes(List<Client> clients, Depot depot, int numberOfVehicles, int vehicleCapacity, int numberOfRoutes = 5)
         {
-            _generations = clients.Count * 20;
             List<List<Vehicle>> routes = new List<List<Vehicle>>();
             List<Vehicle> vehicles = new List<Vehicle>();
 
@@ -38,17 +40,20 @@ namespace RouteOptimizer.Algorithms
         private List<List<Vehicle>> ApplyAlgorithm(List<Vehicle> vehicles, List<Client> clients, Depot depot, int vehicleCapacity, int numberOfRoutes = 5)
         {
             NearestNeighbourAlgorithm NNAlgorithm = new NearestNeighbourAlgorithm();
-            List<Vehicle> route = NNAlgorithm.ApplyAlgorithm(vehicles.ToList(), clients.ToList(), depot, vehicleCapacity);
+            List<Vehicle> route = NNAlgorithm.ApplyAlgorithm(vehicles.Select(v=>v.DeepCopy()).ToList(), clients.Select(c=>c.DeepCopy()).ToList(), depot, vehicleCapacity);
+            SAAlgorithm saAlgorithm = new SAAlgorithm();
+
             List<List<Vehicle>> population = GenerateInitialPopulation(vehicles, clients, depot);
 
             population.Add(route);
 
             List<List<Vehicle>> result = new List<List<Vehicle>>();
             List<Vehicle> bestSolution = route.Select(vehicle => vehicle.DeepCopy()).ToList();
+            int counter = 0;
 
             for (int generation = 0; generation < _generations; generation++)
             {
-                var fitnessScores = population.Select(CalculateTotalDistance).ToList();
+                List<double> fitnessScores = population.Select(CalculateTotalDistance).ToList();
                 List<List<Vehicle>> selectedIndividuals = SelectBestIndividuals(population, fitnessScores);
 
                 if (selectedIndividuals.Count < 2)
@@ -63,11 +68,27 @@ namespace RouteOptimizer.Algorithms
                     Mutate(individual, _mutationProbability, depot);
                 }
 
-                var bestInPopulation = population.OrderBy(c => CalculateTotalDistance(c)).First();
+                population = population.OrderBy(c => CalculateTotalDistance(c)).ToList();
+
+                List<Vehicle> routeForSA = population.ElementAt(random.Next(3));
+                List<Vehicle> routeFromSA = saAlgorithm.OptimizeRoutes(clients.Select(c => c.DeepCopy()).ToList(), depot, vehicles.Count, vehicleCapacity, routeForSA.Select(v => v.DeepCopy()).ToList());
+
+                population.Add(routeFromSA);
+                population.RemoveAt(population.Count - 2);
+                var bestInPopulation = CalculateTotalDistance(routeFromSA) > CalculateTotalDistance(population[0]) ?
+                    population[0] : population[^1];
                 if (CalculateTotalDistance(bestSolution) > CalculateTotalDistance(bestInPopulation))
                 {
                     bestSolution = bestInPopulation.Select(vehicle => vehicle.DeepCopy()).ToList();
+                    counter = 0;
                 }
+
+                if (counter >= MAXCOUNTER) 
+                {
+                    break;
+                }
+
+                counter++;
             }
 
             var bestSolutions = population.Where(c => CalculateTotalDistance(c) != CalculateTotalDistance(bestSolution));
@@ -88,29 +109,42 @@ namespace RouteOptimizer.Algorithms
 
             for (int i = 0; i < _populationSize - 1; i++)
             {
-                var clonedVehicles = vehicles.Select(v => new Vehicle(v.Id, v.Capacity)).ToList();
-                var shuffledClients = clients.OrderBy(c => Helper.GetDistance(depot, c)).ToList();
-                var usedClients = new HashSet<int>();
+                //List<Vehicle> clonedVehicles = vehicles.Select(vehicle => vehicle.DeepCopy()).ToList();
+                //List<Client> clonedClients =  clients.Select(client => client.DeepCopy()).ToList();
 
-                foreach (var client in shuffledClients)
+                //while (clonedClients.Any(c => c.IsVisible)) 
+                //{
+                //    Client client = clonedClients.Where(c => c.IsVisible).OrderBy(c=>random.Next()).FirstOrDefault();
+
+                //    if (client == null) 
+                //    {
+                //        break;
+                //    }
+
+
+            var clonedVehicles = vehicles.Select(v => new Vehicle(v.Id, v.Capacity)).ToList();
+            var shuffledClients = clients.OrderBy(c => Helper.GetDistance(depot, c)).ToList();
+            var usedClients = new HashSet<int>();
+
+            foreach (var client in shuffledClients)
+            {
+                if (usedClients.Contains(client.Id)) continue;
+
+                var vehicle = clonedVehicles.OrderBy(c => random.Next()).FirstOrDefault(v => v.CanAccommodate(client.Quantity));
+                if (vehicle != null)
                 {
-                    if (usedClients.Contains(client.Id)) continue;
-
-                    var vehicle = clonedVehicles.OrderBy(c => random.Next()).FirstOrDefault(v => v.CanAccommodate(client.Quantity));
-                    if (vehicle != null)
-                    {
-                        vehicle.AddClient(client);
-                        usedClients.Add(client.Id);
-                    }
+                    vehicle.AddClient(client);
+                    usedClients.Add(client.Id);
                 }
-
-                foreach (var vehicle in clonedVehicles)
-                {
-                    vehicle.CalculateRouteMetrics(depot);
-                }
-
-                population.Add(clonedVehicles);
             }
+
+            foreach (var vehicle in clonedVehicles)
+            {
+                vehicle.CalculateRouteMetrics(depot);
+            }
+
+            population.Add(clonedVehicles);
+        }
 
             return population;
         }
@@ -164,50 +198,94 @@ namespace RouteOptimizer.Algorithms
         {
 
             var child = parent1.Select(vehicle => vehicle.DeepCopy()).ToList();
-            var usedClients = new HashSet<int>();
-            var unusedClients = new List<Client>();
+
+            var allClientsParent1 = parent1.SelectMany(v => v.Clients).ToList();
+            var allClientsParent2 = parent2.SelectMany(v => v.Clients).ToList();
+
+            int start = random.Next(0, allClientsParent1.Count);
+            int end = random.Next(start, allClientsParent1.Count);
+
+            var subSegment = allClientsParent1.GetRange(start, end - start + 1);
+
+            var childClients = new List<Client>(subSegment);
+
+            foreach (var client in allClientsParent2)
+            {
+                if (!childClients.Contains(client))
+                {
+                    childClients.Add(client);
+                }
+            }
 
             foreach (var vehicle in child)
             {
-                var clientsFromParent1 = parent1.First(v => v.Id == vehicle.Id).Clients.ToList();
-                var clientsFromParent2 = parent2.First(v => v.Id == vehicle.Id).Clients.ToList();
-
-                var allClients = clientsFromParent1.Concat(clientsFromParent2).Distinct()
-                                        .Where(c => !usedClients.Contains(c.Id))
-                                        .OrderBy(c => random.Next()).ToList();
-
                 vehicle.ClearClients();
+            }
 
-                foreach (var client in allClients)
+
+            foreach (var client in childClients)
+            {
+                bool assigned = false;
+
+                foreach (var vehicle in child)
                 {
                     if (vehicle.CanAccommodate(client.Quantity))
                     {
                         vehicle.AddClient(client);
-                        usedClients.Add(client.Id); 
-                    }
-                    else
-                    {
-                        if (!usedClients.Contains(client.Id))
-                        {
-                            usedClients.Add(client.Id);
-                            unusedClients.Add(client);
-                        }
+                        assigned = true;
+                        break;
                     }
                 }
-            }
 
-            int clientsCount = unusedClients.Count;
-            unusedClients = unusedClients.OrderByDescending(x => x.Quantity).ToList();
-            for (int i = 0; i < clientsCount; i++)
-            {
-                Client client = unusedClients[i];
-                var vehicle = child.OrderBy(x => random.Next()).Where(c => c.CanAccommodate(client.Quantity)).FirstOrDefault();
-                if (vehicle == null)
+                if (!assigned)
                 {
-                    continue;
+                    throw new InvalidOperationException($"Client {client.Id} could not be assigned to any vehicle.");
                 }
-                vehicle.AddClient(client);
             }
+            //var usedClients = new HashSet<int>();
+            //var unusedClients = new List<Client>();
+
+            //foreach (var vehicle in child)
+            //{
+            //    var clientsFromParent1 = parent1.First(v => v.Id == vehicle.Id).Clients.ToList();
+            //    var clientsFromParent2 = parent2.First(v => v.Id == vehicle.Id).Clients.ToList();
+
+            //    var allClients = clientsFromParent1.Concat(clientsFromParent2).Distinct()
+            //                            .Where(c => !usedClients.Contains(c.Id))
+            //                            .OrderBy(c => random.Next()).ToList();
+
+            //    vehicle.ClearClients();
+
+            //    foreach (var client in allClients)
+            //    {
+            //        if (vehicle.CanAccommodate(client.Quantity))
+            //        {
+            //            vehicle.AddClient(client);
+            //            usedClients.Add(client.Id); 
+            //        }
+            //        else
+            //        {
+            //            if (!usedClients.Contains(client.Id))
+            //            {
+            //                usedClients.Add(client.Id);
+            //                unusedClients.Add(client);
+            //            }
+            //        }
+            //    }
+            //}
+
+            //int clientsCount = unusedClients.Count;
+            //unusedClients = unusedClients.OrderByDescending(x => x.Quantity).ToList();
+            //for (int i = 0; i < clientsCount; i++)
+            //{
+            //    Client client = unusedClients[i];
+            //    var vehicle = child.OrderBy(x => random.Next()).Where(c => c.CanAccommodate(client.Quantity)).FirstOrDefault();
+            //    if (vehicle == null)
+            //    {
+            //        continue;
+            //    }
+            //    vehicle.AddClient(client);
+            //}
 
             return child;
         }

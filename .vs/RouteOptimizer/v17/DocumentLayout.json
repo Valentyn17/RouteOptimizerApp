@@ -1,50 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\",
+  "WorkspaceRootPath": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\classdiagram.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\controllers\\optimizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizer\\routeoptimizerapp\\routeoptimizer\\controllers\\optimizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\controllers\\optimizecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\algorithms\\nearestneighbouralgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizer\\routeoptimizerapp\\routeoptimizer\\algorithms\\nearestneighbouralgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\algorithms\\nearestneighbouralgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\algorithms\\saalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\algorithms\\saalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\algorithms\\geneticalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizer\\routeoptimizerapp\\routeoptimizer\\algorithms\\geneticalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\algorithms\\geneticalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\models\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\models\\vehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\models\\depot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\models\\depot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\models\\responsealgorithmmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\models\\responsealgorithmmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizerapp\\routeoptimizer\\routeoptimizer\\algorithms\\ialgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\algorithms\\ialgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|d:\\projects\\routeoptimizer\\routeoptimizerapp\\routeoptimizer\\algorithms\\saalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{291B08FC-2A9C-452B-B22A-24650315F297}|RouteOptimizer\\RouteOptimizer.csproj|solutionrelative:routeoptimizer\\algorithms\\saalgorithm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,148 +26,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClassDiagram.cd",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\ClassDiagram.cd",
-              "RelativeDocumentMoniker": "RouteOptimizer\\ClassDiagram.cd",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\ClassDiagram.cd",
-              "RelativeToolTip": "RouteOptimizer\\ClassDiagram.cd",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2024-12-03T19:33:34.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Program.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Program.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Program.cs",
-              "RelativeToolTip": "RouteOptimizer\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAXAAAAAAAAAA==",
+              "Title": "NearestNeighbourAlgorithm.cs",
+              "DocumentMoniker": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
+              "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
+              "ToolTip": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
+              "RelativeToolTip": "RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAIwHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:19:17.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-18T23:59:16.326Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "NearestNeighbourAlgorithm.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
-              "RelativeToolTip": "RouteOptimizer\\Algorithms\\NearestNeighbourAlgorithm.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAAGwAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T18:14:55.62Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Vehicle.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Vehicle.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Models\\Vehicle.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Vehicle.cs",
-              "RelativeToolTip": "RouteOptimizer\\Models\\Vehicle.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAiwAkAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:47:14.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Client.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Models\\Client.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Client.cs",
-              "RelativeToolTip": "RouteOptimizer\\Models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:42:34.73Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Depot.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Depot.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Models\\Depot.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\Depot.cs",
-              "RelativeToolTip": "RouteOptimizer\\Models\\Depot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:42:28.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "SAAlgorithm.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
+              "DocumentMoniker": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
               "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
+              "ToolTip": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
               "RelativeToolTip": "RouteOptimizer\\Algorithms\\SAAlgorithm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQBAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:24:40.685Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GeneticAlgorithm.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
-              "RelativeToolTip": "RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAkwLkAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T17:07:17.444Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-03T17:24:40.685Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GeneticAlgorithm.cs",
+              "DocumentMoniker": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
+              "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
+              "ToolTip": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
+              "RelativeToolTip": "RouteOptimizer\\Algorithms\\GeneticAlgorithm.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAAO4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T17:07:17.444Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "OptimizeController.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Controllers\\OptimizeController.cs",
+              "DocumentMoniker": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Controllers\\OptimizeController.cs",
               "RelativeDocumentMoniker": "RouteOptimizer\\Controllers\\OptimizeController.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Controllers\\OptimizeController.cs",
+              "ToolTip": "D:\\Projects\\RouteOptimizer\\RouteOptimizerApp\\RouteOptimizer\\Controllers\\OptimizeController.cs",
               "RelativeToolTip": "RouteOptimizer\\Controllers\\OptimizeController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAgwBMAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAADsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-03T17:06:02.644Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ResponseAlgorithmModel.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\ResponseAlgorithmModel.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Models\\ResponseAlgorithmModel.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Models\\ResponseAlgorithmModel.cs",
-              "RelativeToolTip": "RouteOptimizer\\Models\\ResponseAlgorithmModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:59:10.197Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IAlgorithm.cs",
-              "DocumentMoniker": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\IAlgorithm.cs",
-              "RelativeDocumentMoniker": "RouteOptimizer\\Algorithms\\IAlgorithm.cs",
-              "ToolTip": "D:\\Projects\\RouteOptimizerApp\\RouteOptimizer\\RouteOptimizer\\Algorithms\\IAlgorithm.cs",
-              "RelativeToolTip": "RouteOptimizer\\Algorithms\\IAlgorithm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:53:01.083Z",
               "EditorCaption": ""
             }
           ]

@@ -1,4 +1,5 @@
 ﻿using RouteOptimizer.Models;
+using System.Globalization;
 
 namespace RouteOptimizer.Helpers
 {
@@ -10,7 +11,8 @@ namespace RouteOptimizer.Helpers
             Depot depot = null;
             int numberOfVehicles = 0;
             int vehicleCapacity = 0;
-
+            CultureInfo culture =  new CultureInfo("uk-UA");
+        
             using (var stream = file.OpenReadStream())
             using (var reader = new StreamReader(stream))
             {
@@ -49,10 +51,10 @@ namespace RouteOptimizer.Helpers
                         if (!int.TryParse(parts[0], out int depotId))
                             throw new Exception($"Invalid depot ID in line {lineNumber}.");
 
-                        if (!double.TryParse(parts[1], out double depotLatitude))
+                        if (!double.TryParse(parts[1], culture, out double depotLatitude))
                             throw new Exception($"Invalid depot latitude in line {lineNumber}.");
 
-                        if (!double.TryParse(parts[2], out double depotLongitude))
+                        if (!double.TryParse(parts[2], culture, out double depotLongitude))
                             throw new Exception($"Invalid depot longitude in line {lineNumber}.");
 
                         depot = new Depot
@@ -71,13 +73,13 @@ namespace RouteOptimizer.Helpers
                         if (!int.TryParse(parts[0], out int clientId))
                             throw new Exception($"Invalid client ID in line {lineNumber}.");
 
-                        if (!double.TryParse(parts[1], out double clientLatitude))
+                        if (!double.TryParse(parts[1],culture, out double clientLatitude))
                             throw new Exception($"Invalid client latitude in line {lineNumber}.");
 
-                        if (!double.TryParse(parts[2], out double clientLongitude))
+                        if (!double.TryParse(parts[2], culture, out double clientLongitude))
                             throw new Exception($"Invalid client longitude in line {lineNumber}.");
 
-                        if (!double.TryParse(parts[3], out double clientQuantity))
+                        if (!double.TryParse(parts[3], culture, out double clientQuantity))
                             throw new Exception($"Invalid client quantity in line {lineNumber}.");
 
                         var client = new Client(clientId, clientLatitude, clientLongitude, clientQuantity);
